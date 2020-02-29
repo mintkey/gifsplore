@@ -8,10 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## To run
 Make sure the latest versions of `npm` and `react` are installed.
 
-1. Clone or download the repository using the green button
+1. Clone or download the repository
+  - **To clone:** Copy the URL from the green button
+    - Open the terminal on your computer and type `git clone URL`, replacing `URL` with the copied URL
 2. `cd` to the directory you just cloned/downloaded the repo to
-
-*Ex:* `cd Downloads/gifsplore-master`
-
 3. Run command `npm install` to install dependencies
 4. Run command `npm start`
