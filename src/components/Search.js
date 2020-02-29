@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+    // Set state to searchTerm string
     constructor () {
         super();
         this.state = { searchTerm: ''};
     }
 
+    // Updates searchTerm state with value of input whenever input changes
     onInputChange(searchTerm) {
         this.setState({searchTerm});
         this.props.onTermChange(searchTerm);
     }
 
+    // Render search field
     render () {
         return (
             <div className="search">

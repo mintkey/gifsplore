@@ -5,9 +5,11 @@ import './App.css';
 import Search from './Search';
 import GifList from './GifList';
 
+// Required key to use for GIPHY API
 export const API_KEY = '7PE8Suc0Q5HIq45EvKLRubErQWS9iJwt';
 
 class App extends Component {
+  // Set state to an array of GIFs from GIPHY API
   constructor () {
     super();
     this.state = {
@@ -15,6 +17,8 @@ class App extends Component {
     };
   }
 
+  // Make GET request to GIPHY API trending endpoint for trending GIFs
+  // Sets state to trending GIFs on initial page load
   componentDidMount() {
     axios.get(`http://api.giphy.com/v1/gifs/trending?&api_key=${API_KEY}&limit=25&rating=G`)
         .then(res => {
@@ -23,6 +27,7 @@ class App extends Component {
         });
   };
 
+  // Each time the search field is updated, make GET request to GIPHY API search endpoint with search term
   handleTermChange = (searchTerm) => {
     axios.get(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}&limit=25&rating=G`)
       .then(res => {
@@ -31,6 +36,7 @@ class App extends Component {
       });
   };
 
+    // Render HTML and React components in main view
     render() {
       return (
         <div className="app">
