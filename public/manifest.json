@@ -1,6 +1,6 @@
 {
-  "short_name": "Get a GIF",
-  "name": "Get a GIF",
+  "short_name": "GIFsplore",
+  "name": "GIFsplore",
   "start_url": ".",
   "display": "standalone"
 }

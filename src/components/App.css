@@ -1,19 +1,52 @@
-.App {
+a {
+  color: inherit;
+  text-decoration: none;
+  z-index: 1;
+  
+}
+
+input {
+  display: block;
+  width: 50%;
+  height: 50px;
+  margin: 20px auto;
+  font-size: 22px;
+  text-align: center;
+  outline: none;
+}
+
+.app {
   margin: 3em auto;
   width: 90%;
 }
 
-.title {
+#heading {
   text-align: center;
 }
 
+#title {
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+#subtitle {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#logo {
+  vertical-align: middle;
+}
+
 .gif-item {
-  box-shadow: 2px 2px 4px 0 #ccc;
-  box-sizing: border-box;
   display: inline-block;
-  margin: 0 0 1.5em;
-  padding: 1em;
   width: 100%;
+  margin: 0 0 0.5em;
+  padding: 0.3em;
+  border-radius: 2px;
+  background: rgba(77,77,77,0.2);
 }
 
 .gif-item img {
@@ -21,19 +54,8 @@
 }
 
 .gif-list {
-  column-gap: 1.5em;
-  font-size: .85em;
   margin: 1.5em 0;
-  padding: 0;
-}
-
-input {
-  display: block;
-  font-size: 22px;
-  height: 50px;
-  margin: 0 auto;
-  text-align: center;
-  width: 50%;
+  column-gap: 1.5em;
 }
 
 @media only screen and (min-width: 400px) {
