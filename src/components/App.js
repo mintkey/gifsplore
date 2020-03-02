@@ -6,7 +6,8 @@ import Search from './Search';
 import GifList from './GifList';
 
 // Required key to use for GIPHY API
-export const API_KEY = '7PE8Suc0Q5HIq45EvKLRubErQWS9iJwt';
+const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
+// export const API_KEY = '7PE8Suc0Q5HIq45EvKLRubErQWS9iJwt';
 
 class App extends Component {
   // Set state to an array of GIFs from GIPHY API

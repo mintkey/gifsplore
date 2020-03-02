@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Heebo', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
-  background-image: linear-gradient(to left top, #000000, #0a0809, #100f12, #141518, #161a1e);
+  background: linear-gradient(to left top, #000000, #0a0809, #100f12, #141518, #161a1e);
 }
 
 code {

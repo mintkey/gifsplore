@@ -1,10 +1,10 @@
 import React from 'react';
 
-const GifItem = (image) => {
+const GifItem = (item) => {
     return (
         <div className="gif-item">
-            <a href={image.gif.url} target="_blank">
-                <img src={image.gif.images.downsized_medium.url} alt={image.gif.title} />
+            <a href={item.gif.url} target="_blank">
+                <img src={item.gif.images.downsized_medium.url} alt={item.gif.title} />
             </a>
         </div>
     )
