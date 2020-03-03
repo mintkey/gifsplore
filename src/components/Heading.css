@@ -1,0 +1,47 @@
+a {
+    color: inherit;
+    text-decoration: none;
+    z-index: 1;
+}
+
+#heading {
+    text-align: center;
+}
+
+#title {
+    margin-top: 50px;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#title:hover {
+    background: linear-gradient(109.6deg, rgba(176, 248, 200, 1) 31.3%, rgba(104, 183, 249, 1) 100.2%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#subtitle {
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#subtitle:after {
+    position: fixed;
+    top: 13%;
+    left: 51.7%;
+    width: 0%;
+    border-bottom: 1px solid #fff;
+    content: '';
+    transition: 0.4s;
+}
+
+#subtitle:hover:after {
+    width: 6%;
+}
+
+#logo {
+    vertical-align: middle;
+}

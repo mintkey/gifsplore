@@ -1,59 +1,44 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import GiphyLogo from '../assets/giphy-logo.png';
+import React, { useState } from 'react';
+import ReactLoading from 'react-loading';
+import useGiphy from '../hooks/useGiphy';
+import Heading from './Heading';
 import './App.css';
-import Search from './Search';
-import GifList from './GifList';
 
-// Required key to use for GIPHY API
-const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
-// export const API_KEY = '7PE8Suc0Q5HIq45EvKLRubErQWS9iJwt';
+function App() {
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('');
+  const [results, loading] = useGiphy(query);
 
-class App extends Component {
-  // Set state to an array of GIFs from GIPHY API
-  constructor (props) {
-    super();
-    this.state = {
-      gifs: []
-    };
-  }
-
-  // Make GET request to GIPHY API trending endpoint for trending GIFs
-  // Sets state to trending GIFs on initial page load
-  componentDidMount() {
-    axios.get(`http://api.giphy.com/v1/gifs/trending?&api_key=${API_KEY}&limit=25&rating=G`)
-        .then(res => {
-            this.setState({gifs: res.data.data});
-            console.log(res.data.data);
-        });
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setQuery(search);
   };
 
-  // Each time the search field is updated, make GET request to GIPHY API search endpoint with search term
-  handleTermChange = (searchTerm) => {
-    axios.get(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}&limit=25&rating=G`)
-      .then(res => {
-        this.setState({gifs: res.data.data});
-        console.log(res.data.data);
-      });
-  };
+  const gifList = results.map((gif) => (
+    <div className="gif-item" key={gif.id}>
+      <a href={gif.url} target="_blank" rel="noopener noreferrer">
+        <img src={gif.images.downsized_medium.url} alt={gif.title} />
+      </a>
+    </div>
+  ));
 
-    // Render HTML and React components in main view
-    render() {
-      return (
-        <div className="app">
-          <div id="heading">
-            <span id="title"><a href="#" onClick={() => window.location.reload(false)}>GIFsplore</a></span>
-            <span id="subtitle">
-              <a href="https://giphy.com/" target="_blank" rel="noopener noreferrer">
-                Powered by<img id="logo" src={GiphyLogo} alt="GIPHY logo" height="25px"/>
-              </a>
-            </span>
-          </div>
-          <Search onTermChange={this.handleTermChange} />
-          <GifList gifs={this.state.gifs} />
-        </div>
-      )
-    }
-}
+  return (
+  <div className="app">
+    <Heading />
+    <form onSubmit={onSubmit}>
+      <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search for a GIF" />
+      <button type="submit">Search</button>
+    </form>
+    <br />
+    {loading ? (
+      <>
+      <ReactLoading type={"blank"} />
+      </>
+    ) : (
+      <div className="gif-list">{gifList}</div>
+    )}
+  </div>
+  );
+};
 
 export default App;
