@@ -1,6 +1,8 @@
 # Helen Dempsey - GIFsplore
 React web app that uses GIPHY API to search GIFs.
 
+![](gifsplore-gif.gif)
+
 GIPHY API documentation: https://developers.giphy.com/docs/api/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
