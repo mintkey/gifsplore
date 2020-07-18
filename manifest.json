@@ -1,0 +1,6 @@
+{
+  "short_name": "GIFsplore",
+  "name": "GIFsplore",
+  "start_url": ".",
+  "display": "standalone"
+}
